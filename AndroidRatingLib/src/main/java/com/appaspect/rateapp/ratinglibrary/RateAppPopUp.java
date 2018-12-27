@@ -20,6 +20,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.RatingBar;
 import android.widget.TextView;
+import android.widget.Toast;
 
 public class RateAppPopUp implements View.OnClickListener
 {
@@ -41,7 +42,7 @@ public class RateAppPopUp implements View.OnClickListener
     private String deviceMANUFACTURER="",deviceMODEL="",deviceSDK="",deviceRELEASE="";
     private LaterListener laterListener;
     private  NoThanksListener noThanksListener;
-    private String str_bottom_email="";
+    private String str_bottom_email="",str_Subject="";
     public RateAppPopUp(Context context, String supportEmail) {
         this.context = context;
         sharedPrefs = context.getSharedPreferences(context.getPackageName(), Context.MODE_PRIVATE);
@@ -55,6 +56,7 @@ public class RateAppPopUp implements View.OnClickListener
 
         try
         {
+           str_Subject= context.getResources().getString(R.string.app_feedback)+": "+ titleToAdd;
 
             deviceMANUFACTURER = Build.MANUFACTURER;
              deviceMODEL =  Build.MODEL;
@@ -223,7 +225,7 @@ public class RateAppPopUp implements View.OnClickListener
         final Intent emailIntent = new Intent(Intent.ACTION_SEND);
         emailIntent.setType("text/email");
         emailIntent.putExtra(Intent.EXTRA_EMAIL, new String[]{supportEmail});
-        emailIntent.putExtra(Intent.EXTRA_SUBJECT, context.getResources().getString(R.string.app_feedback)+": "+ titleToAdd);
+        emailIntent.putExtra(Intent.EXTRA_SUBJECT, str_Subject);
         emailIntent.putExtra(Intent.EXTRA_TEXT, context.getResources().getString(R.string.we_need_more_details)+"\n\n\n"+str_bottom_email);
         context.startActivity(Intent.createChooser(emailIntent, "Send mail..."));
     }
@@ -262,6 +264,7 @@ public class RateAppPopUp implements View.OnClickListener
         {
             if (changed_rating <= ratingRestriction)
             {
+                Toast.makeText(context,str_Subject,Toast.LENGTH_LONG).show();
                 sendEmail();
             }
             else

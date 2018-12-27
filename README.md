@@ -1,12 +1,12 @@
 ## AndroidRatingLib
 
-AndroidRatingLib is a small library that helps developers add a **"Rate My App"** dialog to their applications.
+AndroidRatingLib is a library that helps developers add a **"Rate My Application"** dialog to their apps.
 
 It's called "AndroidRatingLib" because the dialog has a different behaviour based on the rating given by the user.
 
 If the user gives **4 or 5 stars out of 5**, the user is sent to the *Google Play Store* page to give an actual rating.
 
-If the user gives **3 or less stars out of 5**, the user is asked to *send a bug report* to the developer.
+If the user gives **3 or less stars out of 5**, the user is asked to *Give App Feedback* to the developer.
 
 
 
@@ -37,7 +37,7 @@ Add it in your root build.gradle at the end of repositories:
 Step 2. Add the dependency
 
 	dependencies {
-	        implementation 'com.github.AppAspectTech:AndroidRatingLib:1.3'
+	        implementation 'com.github.AppAspectTech:AndroidRatingLib:1.4'
 	}
 
 
@@ -49,17 +49,17 @@ The `showAfter(int numbersOfAccess)` method tells the library after how many acc
 Example:
 
 ```java
-        RateAppPopUp rateAppPopUp = new RateAppPopUp(this,"Email ID");
-                rateAppPopUp.setTitle(getString(R.string.app_name)) // Set App name
-                        .setTheme(RateAppPopUp_Data.THEME_LITE_GRAY) // Set Theme using RateAppPopUp_Data Class
-                        .setRatingRestriction(3) // Market opened if a rating >= 3 is selected
-                        .showAfter(5);
+        RateAppPopUp rateAppPopUp = new RateAppPopUp(this,""); // Set Email ID for App Feedback
+        			rateAppPopUp.setTitle("") // Set App name
+        					.setTheme(RateAppPopUp_Data.THEME_LITE) // Set Theme using RateAppPopUp_Data Class
+        					.setRatingRestriction(3) // Market opened if a rating >= 3 is selected
+        					.showAfter(5); // Set show After how many number of App Access
 ```
 ## Features
 
 The library is very simple, just note that :
-* When the user tap OK or NEVER the dialog will not show again
-* When the user tap NOT NOW the access counter will be reset and the dialog will be shown again after the selected times.
+* When the user click Rate Now or No,Thanks the dialog will not show again.
+* When the user click Remind me later the access counter will be reset and the dialog will be shown again after the selected times.
 
 ## Used by
 
@@ -68,5 +68,4 @@ So I can add your app here!
 
 
 ## License
-
 Do what you want with this library.
