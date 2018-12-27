@@ -18,19 +18,32 @@ If the user gives **3 or less stars out of 5**, the user is asked to *send a bug
 
 ## Installation
 
-To use the library, first include it your project using Gradle
+
+How to
+
+To get a Git project into your build:
+
+Step 1. Add the JitPack repository to your build file 
 
 
-    allprojects {
-        repositories {
-            jcenter()
-            maven { url "https://jitpack.io" }
-        }
-    }
+Add it in your root build.gradle at the end of repositories:
+
+	allprojects {
+		repositories {
+			...
+			maven { url 'https://jitpack.io' }
+		}
+	}
+
+
+
+Step 2. Add the dependency
 
 	dependencies {
-	        implementation 'com.appaspect.rateapp.ratinglibrary:AndroidRatingLib:1.1'
+	        implementation 'com.github.AppAspectTech:AndroidRatingLib:1.2'
 	}
+
+
 
 
 
