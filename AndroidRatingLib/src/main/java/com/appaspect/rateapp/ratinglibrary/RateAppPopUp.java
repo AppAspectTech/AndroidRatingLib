@@ -278,7 +278,7 @@ public class RateAppPopUp implements View.OnClickListener
         else if(v.getId()==R.id.txt_remind_me_later)
         {
 
-            editor.putInt(RateAppPopUp_Data.RateApp_NUMBER_OF_ACCESS, 0);
+            editor.putInt(RateAppPopUp_Data.RateApp_NUMBER_OF_ACCESS, 1);
             editor.apply();
 
             if (laterListener != null)
@@ -288,6 +288,7 @@ public class RateAppPopUp implements View.OnClickListener
         }
         else if(v.getId()==R.id.txt_no_thanks)
         {
+            disable();
             editor.putInt(RateAppPopUp_Data.RateApp_NUMBER_OF_ACCESS, 0);
             editor.apply();
 
