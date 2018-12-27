@@ -11,13 +11,10 @@ If the user gives **3 or less stars out of 5**, the user is asked to *send a bug
 
 
 ## Preview
-
-
-<img src="screenshot_lite.png" alt="preview" width="540" height="960">
+<img src="screenshot_lite.jpeg" alt="preview" width="300" height="533">
 
 
 ## Installation
-
 
 How to
 
@@ -42,9 +39,6 @@ Step 2. Add the dependency
 	dependencies {
 	        implementation 'com.github.AppAspectTech:AndroidRatingLib:1.2'
 	}
-
-
-
 
 
 ## How to use
