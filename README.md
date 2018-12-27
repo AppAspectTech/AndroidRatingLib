@@ -29,7 +29,7 @@ To use the library, first include it your project using Gradle
     }
 
 	dependencies {
-	        implementation 'com.appaspect.rateapp.ratinglibrary:AndroidRatingLib:1.0'
+	        implementation 'com.appaspect.rateapp.ratinglibrary:AndroidRatingLib:1.1'
 	}
 
 
