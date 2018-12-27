@@ -10,8 +10,8 @@ If the user gives **3 or less stars out of 5**, the user is asked to *Give App F
 
 
 
-## Preview
-<img src="screenshot_lite.jpeg" alt="preview" width="300" height="533">
+## Preview Theme LITE
+<img src="screenshot1.jpeg" alt="preview" width="300" height="533">
 
 
 ## Installation
@@ -60,6 +60,21 @@ Example:
 The library is very simple, just note that :
 * When the user click Rate Now or No,Thanks the dialog will not show again.
 * When the user click Remind me later the access counter will be reset and the dialog will be shown again after the selected times.
+
+## Theme DARK
+<img src="screenshot2.jpeg" alt="preview" width="300" height="533">
+
+## Theme DARK GRAY
+<img src="screenshot3.jpeg" alt="preview" width="300" height="533">
+
+## Theme DEFAULT LITE
+<img src="screenshot4.jpeg" alt="preview" width="300" height="533">
+
+## Theme DEFAULT DARK
+<img src="screenshot5.jpeg" alt="preview" width="300" height="533">
+
+## Theme DEFAULT DARK
+<img src="screenshot6.jpeg" alt="preview" width="300" height="533">
 
 ## Used by
 
