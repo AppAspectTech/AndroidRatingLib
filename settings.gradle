@@ -1,1 +1,1 @@
-include ':app', ':AndroidRatingLib'
+include ':AndroidRatingLib',':app'
