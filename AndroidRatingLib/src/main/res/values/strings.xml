@@ -1,0 +1,15 @@
+<resources>
+    <string name="app_name">RatingLibrary</string>
+    <string name="rate_your_app_name">Rate Your App Name</string>
+    <string name="if_you_enjoy_using_app">If you enjoy using this application, would you mind taking a moment to rate it? It will not more than a minute. Thanks for your support!</string>
+    <string name="rate_this_app">Rate this Application</string>
+    <string name="remind_me_later">Remind me later</string>
+    <string name="no_thanks">No,Thanks</string>
+    <string name="rate_now">Rate Now</string>
+    <string name="later_title">Later</string>
+    <string name="app_feedback">Application Feedback</string>
+    <string name="we_need_more_details">We need more details to resolve your issues. You can add the issues you are facing in the App below.</string>
+    <string name="device_title">Device</string>
+    <string name="device_os">Device OS</string>
+    <string name="app_version">App Version</string>
+</resources>

@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:layout_gravity="center"
+    android:gravity="center">
+
+    <LinearLayout
+        android:id="@+id/ll_rate_layout"
+        android:background="@drawable/bg_dark_gray"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="@dimen/padding_medium">
+
+        <TextView
+            android:layout_margin="@dimen/margin_small"
+            android:id="@+id/txt_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/app_name"
+            android:textStyle="bold"
+            android:textSize="@dimen/textlargesize"
+            android:textColor="@color/text_color_white"/>
+
+        <TextView
+            android:layout_margin="@dimen/margin_small"
+            android:id="@+id/txt_message"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/text_color_white"
+            android:textSize="@dimen/textnormalsize"
+            android:text="@string/if_you_enjoy_using_app"/>
+
+        <RatingBar
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/ratingBar"
+            android:max="5"
+            android:rating="5"
+            android:stepSize="1"
+            android:numStars="5"
+            android:layout_gravity="center"
+            android:layout_margin="@dimen/margin_large"
+            />
+
+        <View
+            android:layout_marginTop="@dimen/margin_small"
+            android:layout_width="match_parent"
+            android:layout_height="1dip"
+            android:background="@color/devider_color_dark"
+            />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:padding="@dimen/padding_small">
+
+            <TextView
+                android:id="@+id/txt_remind_me_later"
+                android:layout_width="0dip"
+                android:layout_weight="0.40"
+                android:layout_height="wrap_content"
+                android:textColor="@color/text_color_white"
+                android:textSize="@dimen/textnormalsize"
+                android:text="@string/later_title"
+                android:textStyle="bold"/>
+
+            <TextView
+
+                android:id="@+id/txt_no_thanks"
+                android:layout_width="0dip"
+                android:layout_weight="0.30"
+                android:layout_height="wrap_content"
+                android:text="@string/no_thanks"
+                android:textColor="@color/text_color_white"
+                android:layout_gravity="right|center"
+                android:gravity="center|right"
+                android:textSize="@dimen/textnormalsize"
+                android:textStyle="bold"/>
+
+            <TextView
+
+                android:id="@+id/txt_rate_this_app"
+                android:layout_width="0dip"
+                android:layout_weight="0.30"
+                android:layout_height="wrap_content"
+                android:layout_gravity="right|center"
+                android:gravity="center|right"
+                android:textColor="@color/text_color_white"
+                android:textSize="@dimen/textnormalsize"
+                android:text="@string/rate_now"
+                android:textStyle="bold"/>
+
+
+        </LinearLayout>
+    </LinearLayout>
+</LinearLayout>

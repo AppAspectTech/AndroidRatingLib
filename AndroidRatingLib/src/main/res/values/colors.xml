@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#808080</color>
+    <color name="colorPrimaryDark">#808080</color>
+    <color name="colorAccent">#D81B60</color>
+
+    <color name="text_color_black">#000000</color>
+    <color name="text_color_white">#FFFFFF</color>
+    <color name="text_color_gray">#DCDCDC</color>
+    <color name="text_color_dark_gray">#808080</color>
+
+    <color name="devider_color_dark">#696969</color>
+    <color name="devider_color_lite">#939393</color>
+    <color name="bg_color_star">#ffc850</color>
+    <color name="bg_color_black">#000000</color>
+    <color name="bg_color_white">#FFFFFF</color>
+    <color name="bg_color_gray">#DCDCDC</color>
+    <color name="bg_color_dark_gray">#808080</color>
+</resources>
