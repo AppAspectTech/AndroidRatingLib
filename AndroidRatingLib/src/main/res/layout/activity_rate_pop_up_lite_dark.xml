@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout
+    android:id="@+id/ll_rate_layout"
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
@@ -7,11 +8,32 @@
     android:layout_height="wrap_content"
     android:orientation="vertical"
     android:layout_gravity="center"
-    android:gravity="center">
+    android:gravity="center"
+    android:background="@drawable/bg_dark">
 
     <LinearLayout
-        android:id="@+id/ll_rate_layout"
-        android:background="@drawable/bg_dark"
+        android:id="@+id/ll_name"
+        android:background="@drawable/bg_top_header_black"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_gravity="center"
+        android:gravity="center"
+        android:padding="@dimen/padding_medium">
+
+        <TextView
+            android:id="@+id/txt_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/app_name"
+            android:textStyle="bold"
+            android:textSize="@dimen/textlargesize"
+            android:textColor="@color/text_color_gray"/>
+
+    </LinearLayout>
+
+    <LinearLayout
+
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="vertical"
@@ -21,21 +43,10 @@
 
         <TextView
             android:layout_margin="@dimen/margin_small"
-            android:padding="@dimen/padding_small"
-            android:id="@+id/txt_name"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/app_name"
-            android:textStyle="bold"
-            android:textSize="@dimen/textlargesize"
-            android:textColor="@color/text_color_white"/>
-
-        <TextView
-            android:layout_margin="@dimen/margin_small"
             android:id="@+id/txt_message"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:textColor="@color/text_color_white"
+            android:textColor="@color/text_color_gray"
             android:textSize="@dimen/textnormalsize"
             android:text="@string/if_you_enjoy_using_app"/>
 
@@ -63,7 +74,7 @@
             android:id="@+id/txt_rate_this_app"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:textColor="@color/text_color_white"
+            android:textColor="@color/text_color_gray"
             android:textSize="@dimen/textlargesize"
             android:text="@string/rate_this_app"
             android:textStyle="bold"/>
@@ -79,7 +90,7 @@
             android:id="@+id/txt_remind_me_later"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:textColor="@color/text_color_white"
+            android:textColor="@color/text_color_gray"
             android:textSize="@dimen/textlargesize"
             android:text="@string/remind_me_later"
             android:textStyle="bold"/>
@@ -96,7 +107,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/no_thanks"
-            android:textColor="@color/text_color_white"
+            android:textColor="@color/text_color_gray"
             android:textSize="@dimen/textlargesize"
             android:textStyle="bold"/>
 

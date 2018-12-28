@@ -37,7 +37,7 @@ Add it in your root build.gradle at the end of repositories:
 Step 2. Add the dependency
 
 	dependencies {
-	        implementation 'com.github.AppAspectTech:AndroidRatingLib:1.4'
+	        implementation 'com.github.AppAspectTech:AndroidRatingLib:1.5'
 	}
 
 
@@ -51,9 +51,11 @@ Example:
 ```java
         RateAppPopUp rateAppPopUp = new RateAppPopUp(this,""); // Set Email ID for App Feedback
         			rateAppPopUp.setTitle("") // Set App name
-        					.setTheme(RateAppPopUp_Data.THEME_LITE) // Set Theme using RateAppPopUp_Data Class
-        					.setRatingRestriction(3) // Market opened if a rating >= 3 is selected
-        					.showAfter(5); // Set show After how many number of App Access
+        			.setHeader_Background_Color(getResources().getColor(R.color.bg_color_black)) // set Header Background Color
+                    .setHeader_Text_Color(getResources().getColor(R.color.text_color_white)) // set Header Text Color
+                    .setTheme(RateAppPopUp_Data.THEME_LITE) // Set Theme using RateAppPopUp_Data Class
+                    .setRatingRestriction(3) // Market opened if a rating >= 3 is selected
+                    .showAfter(5); // Set show After how many number of App Access
 ```
 ## Features
 

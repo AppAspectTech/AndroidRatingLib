@@ -18,6 +18,7 @@ import android.support.v7.app.AlertDialog;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
+import android.widget.LinearLayout;
 import android.widget.RatingBar;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -35,7 +36,7 @@ public class RateAppPopUp implements View.OnClickListener
     private AlertDialog alertDialog;
     private View dialogView;
     private int ratingRestriction = 3;
-    private int theme=RateAppPopUp_Data.THEME_LITE;
+    private int theme=RateAppPopUp_Data.THEME_LITE_WHITE;
     private RateAppListener rateAppListener;
     private int starColor, changed_rating=5;
     private String titleToAdd="",textToAdd="",appPackageName="",versionName="";
@@ -43,6 +44,7 @@ public class RateAppPopUp implements View.OnClickListener
     private LaterListener laterListener;
     private  NoThanksListener noThanksListener;
     private String str_bottom_email="",str_Subject="";
+    private int header_bg_color=-1,header_text_color=-1;
     public RateAppPopUp(Context context, String supportEmail) {
         this.context = context;
         sharedPrefs = context.getSharedPreferences(context.getPackageName(), Context.MODE_PRIVATE);
@@ -101,36 +103,46 @@ public class RateAppPopUp implements View.OnClickListener
         AlertDialog.Builder builder = new AlertDialog.Builder(context);
         LayoutInflater inflater = LayoutInflater.from(context);
 
-        dialogView = inflater.inflate(R.layout.activity_rate_pop_up_lite, null);
+        dialogView = inflater.inflate(R.layout.activity_rate_pop_up_lite_gray, null);
 
 
-        if(theme==RateAppPopUp_Data.THEME_LITE)
+        if(theme==RateAppPopUp_Data.THEME_LITE_WHITE)
         {
-            dialogView = inflater.inflate(R.layout.activity_rate_pop_up_lite, null);
-        }
-        else if(theme==RateAppPopUp_Data.THEME_LITE_DARK)
-        {
-            dialogView = inflater.inflate(R.layout.activity_rate_pop_up_lite_dark, null);
+            dialogView = inflater.inflate(R.layout.activity_rate_pop_up_lite_white, null);
         }
         else if(theme==RateAppPopUp_Data.THEME_LITE_GRAY)
         {
             dialogView = inflater.inflate(R.layout.activity_rate_pop_up_lite_gray, null);
         }
-        else if(theme==RateAppPopUp_Data.THEME_DEFAULT_LITE)
+        else if(theme==RateAppPopUp_Data.THEME_LITE_DARK)
         {
-            dialogView = inflater.inflate(R.layout.activity_rate_pop_up_default, null);
+            dialogView = inflater.inflate(R.layout.activity_rate_pop_up_lite_dark, null);
         }
-        else if(theme==RateAppPopUp_Data.THEME_DEFAULT_DARK)
+        else if(theme==RateAppPopUp_Data.THEME_LITE_DARK_GRAY)
         {
-            dialogView = inflater.inflate(R.layout.activity_rate_pop_up_default_dark, null);
+            dialogView = inflater.inflate(R.layout.activity_rate_pop_up_lite_dark_gray, null);
+        }
+        else if(theme==RateAppPopUp_Data.THEME_DEFAULT_WHITE)
+        {
+            dialogView = inflater.inflate(R.layout.activity_rate_pop_up_default_white, null);
         }
         else if(theme==RateAppPopUp_Data.THEME_DEFAULT_GRAY)
         {
             dialogView = inflater.inflate(R.layout.activity_rate_pop_up_default_gray, null);
         }
+        else if(theme==RateAppPopUp_Data.THEME_DEFAULT_DARK)
+        {
+            dialogView = inflater.inflate(R.layout.activity_rate_pop_up_default_dark, null);
+        }
+        else if(theme==RateAppPopUp_Data.THEME_DEFAULT_DARK_GRAY)
+        {
+            dialogView = inflater.inflate(R.layout.activity_rate_pop_up_default_dark_gray, null);
+        }
 
 
         builder.setView(dialogView);
+
+        LinearLayout ll_name = (LinearLayout)dialogView.findViewById(R.id.ll_name);
 
         TextView txt_name = (TextView)dialogView.findViewById(R.id.txt_name);
         TextView txt_message = (TextView)dialogView.findViewById(R.id.txt_message);
@@ -139,39 +151,38 @@ public class RateAppPopUp implements View.OnClickListener
         TextView txt_no_thanks = (TextView)dialogView.findViewById(R.id.txt_no_thanks);
         RatingBar ratingBar = (RatingBar) dialogView.findViewById(R.id.ratingBar);
 
+        if(header_bg_color!=-1)
+        {
+            ll_name.setBackgroundColor(header_bg_color);
+        }
+
+        if(header_text_color!=-1)
+        {
+            txt_name.setTextColor(header_text_color);
+        }
+
+
         LayerDrawable stars = (LayerDrawable) ratingBar.getProgressDrawable();
 
-        if(theme==RateAppPopUp_Data.THEME_LITE)
+        if(theme==RateAppPopUp_Data.THEME_LITE_WHITE || theme==RateAppPopUp_Data.THEME_LITE_GRAY)
         {
             stars.getDrawable(2).setColorFilter(context.getResources().getColor(R.color.bg_color_dark_gray), PorterDuff.Mode.SRC_ATOP);
             stars.getDrawable(1).setColorFilter(context.getResources().getColor(R.color.bg_color_dark_gray), PorterDuff.Mode.SRC_ATOP);
             stars.getDrawable(0).setColorFilter(context.getResources().getColor(R.color.bg_color_dark_gray), PorterDuff.Mode.SRC_ATOP);
         }
-        else if(theme==RateAppPopUp_Data.THEME_LITE_DARK)
+        else if(theme==RateAppPopUp_Data.THEME_LITE_DARK || theme==RateAppPopUp_Data.THEME_LITE_DARK_GRAY)
         {
             stars.getDrawable(2).setColorFilter(context.getResources().getColor(R.color.bg_color_white), PorterDuff.Mode.SRC_ATOP);
             stars.getDrawable(1).setColorFilter(context.getResources().getColor(R.color.bg_color_white), PorterDuff.Mode.SRC_ATOP);
             stars.getDrawable(0).setColorFilter(context.getResources().getColor(R.color.bg_color_white), PorterDuff.Mode.SRC_ATOP);
         }
-        else if(theme==RateAppPopUp_Data.THEME_LITE_GRAY)
-        {
-            stars.getDrawable(2).setColorFilter(context.getResources().getColor(R.color.bg_color_white), PorterDuff.Mode.SRC_ATOP);
-            stars.getDrawable(1).setColorFilter(context.getResources().getColor(R.color.bg_color_white), PorterDuff.Mode.SRC_ATOP);
-            stars.getDrawable(0).setColorFilter(context.getResources().getColor(R.color.bg_color_white), PorterDuff.Mode.SRC_ATOP);
-        }
-        else if(theme==RateAppPopUp_Data.THEME_DEFAULT_LITE)
+        else if(theme==RateAppPopUp_Data.THEME_DEFAULT_WHITE || theme==RateAppPopUp_Data.THEME_DEFAULT_GRAY)
         {
             stars.getDrawable(2).setColorFilter(context.getResources().getColor(R.color.bg_color_dark_gray), PorterDuff.Mode.SRC_ATOP);
             stars.getDrawable(1).setColorFilter(context.getResources().getColor(R.color.bg_color_dark_gray), PorterDuff.Mode.SRC_ATOP);
             stars.getDrawable(0).setColorFilter(context.getResources().getColor(R.color.bg_color_dark_gray), PorterDuff.Mode.SRC_ATOP);
         }
-        else if(theme==RateAppPopUp_Data.THEME_DEFAULT_DARK)
-        {
-            stars.getDrawable(2).setColorFilter(context.getResources().getColor(R.color.bg_color_white), PorterDuff.Mode.SRC_ATOP);
-            stars.getDrawable(1).setColorFilter(context.getResources().getColor(R.color.bg_color_white), PorterDuff.Mode.SRC_ATOP);
-            stars.getDrawable(0).setColorFilter(context.getResources().getColor(R.color.bg_color_white), PorterDuff.Mode.SRC_ATOP);
-        }
-        else if(theme==RateAppPopUp_Data.THEME_DEFAULT_GRAY)
+        else if(theme==RateAppPopUp_Data.THEME_DEFAULT_DARK || theme==RateAppPopUp_Data.THEME_DEFAULT_DARK_GRAY)
         {
             stars.getDrawable(2).setColorFilter(context.getResources().getColor(R.color.bg_color_white), PorterDuff.Mode.SRC_ATOP);
             stars.getDrawable(1).setColorFilter(context.getResources().getColor(R.color.bg_color_white), PorterDuff.Mode.SRC_ATOP);
@@ -244,15 +255,32 @@ public class RateAppPopUp implements View.OnClickListener
     {
         build();
 
-        int numOfAccess = sharedPrefs.getInt(RateAppPopUp_Data.RateApp_NUMBER_OF_ACCESS, 0);
-
-        if (numOfAccess == numberOfAccess || numOfAccess == 0)
+        if(numberOfAccess<=0)
         {
-            show();
+            numberOfAccess=5;
         }
 
-        editor.putInt(RateAppPopUp_Data.RateApp_NUMBER_OF_ACCESS, numOfAccess + 1);
-        editor.apply();
+        int numOfAccess = sharedPrefs.getInt(RateAppPopUp_Data.RateApp_NUMBER_OF_ACCESS, 0);
+
+        if (numOfAccess == 0)
+        {
+            show();
+            editor.putInt(RateAppPopUp_Data.RateApp_NUMBER_OF_ACCESS, numOfAccess + 1);
+            editor.apply();
+        }
+        else if (numOfAccess == numberOfAccess)
+        {
+            show();
+            editor.putInt(RateAppPopUp_Data.RateApp_NUMBER_OF_ACCESS, 0);
+            editor.apply();
+        }
+        else
+        {
+            editor.putInt(RateAppPopUp_Data.RateApp_NUMBER_OF_ACCESS, numOfAccess + 1);
+            editor.apply();
+        }
+
+
     }
 
 
@@ -302,6 +330,20 @@ public class RateAppPopUp implements View.OnClickListener
         }
 
     }
+
+    public RateAppPopUp setHeader_Background_Color(int theme)
+    {
+        this.header_bg_color = theme;
+        return this;
+
+    }
+    public RateAppPopUp setHeader_Text_Color(int theme)
+    {
+        this.header_text_color = theme;
+        return this;
+
+    }
+
 
     public RateAppPopUp setTheme(int theme)
     {

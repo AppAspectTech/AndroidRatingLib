@@ -18,9 +18,11 @@ public class MainActivity extends AppCompatActivity {
 
         RateAppPopUp rateAppPopUp = new RateAppPopUp(this,"darasaini1312@gmail.com");
         rateAppPopUp.setTitle(getString(R.string.app_name))
-                .setTheme(RateAppPopUp_Data.THEME_LITE)
+                .setHeader_Background_Color(getResources().getColor(R.color.bg_color_black))
+                .setHeader_Text_Color(getResources().getColor(R.color.text_color_white))
+                .setTheme(RateAppPopUp_Data.THEME_LITE_WHITE)
                 .setRatingRestriction(3) // Market opened if a rating >= 3 is selected
-                .showAfter(5);
+                .showAfter(1);
 
     }
 

@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout
-    android:id="@+id/ll_rate_layout"
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
@@ -9,16 +8,15 @@
     android:orientation="vertical"
     android:layout_gravity="center"
     android:gravity="center"
-    android:background="@drawable/bg_gray">
+    android:id="@+id/ll_rate_layout"
+    android:background="@drawable/bg_dark_gray">
 
     <LinearLayout
         android:id="@+id/ll_name"
-        android:background="@drawable/bg_top_header"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="vertical"
         android:layout_gravity="center"
-        android:gravity="center"
         android:padding="@dimen/padding_medium">
 
         <TextView
@@ -36,8 +34,6 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="vertical"
-        android:layout_gravity="center"
-        android:gravity="center"
         android:padding="@dimen/padding_medium">
 
 
@@ -46,7 +42,7 @@
             android:id="@+id/txt_message"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:textColor="@color/text_color_dark_gray"
+            android:textColor="@color/text_color_gray"
             android:textSize="@dimen/textnormalsize"
             android:text="@string/if_you_enjoy_using_app"/>
 
@@ -59,57 +55,59 @@
             android:stepSize="1"
             android:numStars="5"
             android:layout_gravity="center"
-            android:layout_marginTop="@dimen/margin_large" />
-
+            android:layout_margin="@dimen/margin_large"
+            />
 
         <View
             android:layout_marginTop="@dimen/margin_small"
             android:layout_width="match_parent"
-            android:layout_height="1dp"
-            android:background="@color/devider_color_gray" />
+            android:layout_height="1dip"
+            android:background="@color/devider_color_dark"
+            />
 
-        <TextView
-            android:layout_margin="@dimen/margin_small"
-            android:padding="@dimen/padding_small"
-            android:id="@+id/txt_rate_this_app"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:textColor="@color/text_color_dark_gray"
-            android:textSize="@dimen/textlargesize"
-            android:text="@string/rate_this_app"
-            android:textStyle="bold"/>
-
-        <View
+        <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="1dp"
-            android:background="@color/devider_color_gray" />
-
-        <TextView
-            android:layout_margin="@dimen/margin_small"
-            android:padding="@dimen/padding_small"
-            android:id="@+id/txt_remind_me_later"
-            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:textColor="@color/text_color_dark_gray"
-            android:textSize="@dimen/textlargesize"
-            android:text="@string/remind_me_later"
-            android:textStyle="bold"/>
+            android:orientation="horizontal"
+            android:padding="@dimen/padding_small">
 
-        <View
-            android:layout_width="match_parent"
-            android:layout_height="1dp"
-            android:background="@color/devider_color_gray" />
+            <TextView
+                android:id="@+id/txt_remind_me_later"
+                android:layout_width="0dip"
+                android:layout_weight="0.40"
+                android:layout_height="wrap_content"
+                android:textColor="@color/text_color_gray"
+                android:textSize="@dimen/textnormalsize"
+                android:text="@string/later_title"
+                android:textStyle="bold"/>
 
-        <TextView
-            android:layout_margin="@dimen/margin_small"
-            android:padding="@dimen/padding_small"
-            android:id="@+id/txt_no_thanks"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/no_thanks"
-            android:textColor="@color/text_color_dark_gray"
-            android:textSize="@dimen/textlargesize"
-            android:textStyle="bold"/>
+            <TextView
 
+                android:id="@+id/txt_no_thanks"
+                android:layout_width="0dip"
+                android:layout_weight="0.30"
+                android:layout_height="wrap_content"
+                android:text="@string/no_thanks"
+                android:textColor="@color/text_color_gray"
+                android:layout_gravity="right|center"
+                android:gravity="center|right"
+                android:textSize="@dimen/textnormalsize"
+                android:textStyle="bold"/>
+
+            <TextView
+
+                android:id="@+id/txt_rate_this_app"
+                android:layout_width="0dip"
+                android:layout_weight="0.30"
+                android:layout_height="wrap_content"
+                android:layout_gravity="right|center"
+                android:gravity="center|right"
+                android:textColor="@color/text_color_gray"
+                android:textSize="@dimen/textnormalsize"
+                android:text="@string/rate_now"
+                android:textStyle="bold"/>
+
+
+        </LinearLayout>
     </LinearLayout>
 </LinearLayout>
