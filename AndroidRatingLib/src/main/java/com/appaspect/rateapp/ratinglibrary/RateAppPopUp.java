@@ -11,11 +11,15 @@ import android.content.pm.PackageManager;
 import android.graphics.Color;
 import android.graphics.PorterDuff;
 import android.graphics.drawable.ColorDrawable;
+import android.graphics.drawable.Drawable;
+import android.graphics.drawable.GradientDrawable;
 import android.graphics.drawable.LayerDrawable;
 import android.net.Uri;
 import android.os.Build;
 import android.support.v7.app.AlertDialog;
+import android.util.DisplayMetrics;
 import android.util.Log;
+import android.util.TypedValue;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.LinearLayout;
@@ -153,7 +157,9 @@ public class RateAppPopUp implements View.OnClickListener
 
         if(header_bg_color!=-1)
         {
-            ll_name.setBackgroundColor(header_bg_color);
+
+
+            ll_name.setBackgroundDrawable(customView(context,header_bg_color,header_bg_color));
         }
 
         if(header_text_color!=-1)
@@ -218,6 +224,23 @@ public class RateAppPopUp implements View.OnClickListener
     {
         editor.putBoolean(RateAppPopUp_Data.RateApp_DISABLED, true);
         editor.apply();
+    }
+
+
+    private float dipToPixels(Context context, float dipValue) {
+        DisplayMetrics metrics = context.getResources().getDisplayMetrics();
+        return TypedValue.applyDimension(TypedValue.COMPLEX_UNIT_DIP, dipValue, metrics);
+    }
+    private GradientDrawable customView(Context context, int backgroundColor, int borderColor) {
+
+        int corner_pixels=(int)dipToPixels(context,5);
+        GradientDrawable shape = new GradientDrawable();
+        shape.setShape(GradientDrawable.RECTANGLE);
+        shape.setCornerRadii(new float[] { corner_pixels, corner_pixels, corner_pixels, corner_pixels, 0, 0, 0, 0 });
+        shape.setColor(backgroundColor);
+        shape.setStroke(corner_pixels, borderColor);
+
+        return shape;
     }
 
     private void openMarket()
