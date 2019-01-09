@@ -52,7 +52,6 @@
             android:id="@+id/ratingBar"
             android:max="5"
             android:rating="5"
-            android:stepSize="1"
             android:numStars="5"
             android:layout_gravity="center"
             android:layout_marginTop="@dimen/margin_large" />

@@ -49,8 +49,8 @@ The `showAfter(int numbersOfAccess)` method tells the library after how many acc
 Example:
 
 ```java
-        RateAppPopUp rateAppPopUp = new RateAppPopUp(this,""); // Set Email ID for App Feedback
-        			rateAppPopUp.setTitle("") // Set App name
+RateAppPopUp rateAppPopUp = new RateAppPopUp(this,""); // Set Email ID for App Feedback
+        		rateAppPopUp.setTitle("") // Set App name
         			.setHeader_Background_Color(getResources().getColor(R.color.bg_color_black)) // set Header Background Color
                     .setHeader_Text_Color(getResources().getColor(R.color.text_color_white)) // set Header Text Color
                     .setTheme(RateAppPopUp_Data.THEME_LITE) // Set Theme using RateAppPopUp_Data Class

@@ -170,38 +170,46 @@ public class RateAppPopUp implements View.OnClickListener
 
         LayerDrawable stars = (LayerDrawable) ratingBar.getProgressDrawable();
 
-        if(theme==RateAppPopUp_Data.THEME_LITE_WHITE || theme==RateAppPopUp_Data.THEME_LITE_GRAY)
+        if(theme==RateAppPopUp_Data.THEME_LITE_WHITE ||  theme==RateAppPopUp_Data.THEME_DEFAULT_WHITE)
         {
             stars.getDrawable(2).setColorFilter(context.getResources().getColor(R.color.bg_color_dark_gray), PorterDuff.Mode.SRC_ATOP);
-            stars.getDrawable(1).setColorFilter(context.getResources().getColor(R.color.bg_color_dark_gray), PorterDuff.Mode.SRC_ATOP);
-            stars.getDrawable(0).setColorFilter(context.getResources().getColor(R.color.bg_color_dark_gray), PorterDuff.Mode.SRC_ATOP);
+            stars.getDrawable(1).setColorFilter(context.getResources().getColor(R.color.bg_color_gray), PorterDuff.Mode.SRC_ATOP);
+            stars.getDrawable(0).setColorFilter(context.getResources().getColor(R.color.bg_color_gray), PorterDuff.Mode.SRC_ATOP);
         }
-        else if(theme==RateAppPopUp_Data.THEME_LITE_DARK || theme==RateAppPopUp_Data.THEME_LITE_DARK_GRAY)
+        else if(theme==RateAppPopUp_Data.THEME_LITE_GRAY || theme==RateAppPopUp_Data.THEME_DEFAULT_GRAY)
         {
-            stars.getDrawable(2).setColorFilter(context.getResources().getColor(R.color.bg_color_white), PorterDuff.Mode.SRC_ATOP);
+            stars.getDrawable(2).setColorFilter(context.getResources().getColor(R.color.bg_color_dark_gray), PorterDuff.Mode.SRC_ATOP);
             stars.getDrawable(1).setColorFilter(context.getResources().getColor(R.color.bg_color_white), PorterDuff.Mode.SRC_ATOP);
             stars.getDrawable(0).setColorFilter(context.getResources().getColor(R.color.bg_color_white), PorterDuff.Mode.SRC_ATOP);
         }
-        else if(theme==RateAppPopUp_Data.THEME_DEFAULT_WHITE || theme==RateAppPopUp_Data.THEME_DEFAULT_GRAY)
+        else if(theme==RateAppPopUp_Data.THEME_LITE_DARK_GRAY || theme==RateAppPopUp_Data.THEME_DEFAULT_DARK_GRAY)
         {
-            stars.getDrawable(2).setColorFilter(context.getResources().getColor(R.color.bg_color_dark_gray), PorterDuff.Mode.SRC_ATOP);
+            stars.getDrawable(2).setColorFilter(context.getResources().getColor(R.color.bg_color_white), PorterDuff.Mode.SRC_ATOP);
+            stars.getDrawable(1).setColorFilter(context.getResources().getColor(R.color.bg_color_gray), PorterDuff.Mode.SRC_ATOP);
+            stars.getDrawable(0).setColorFilter(context.getResources().getColor(R.color.bg_color_gray), PorterDuff.Mode.SRC_ATOP);
+        }
+        else if(theme==RateAppPopUp_Data.THEME_LITE_DARK || theme==RateAppPopUp_Data.THEME_DEFAULT_DARK  )
+        {
+            stars.getDrawable(2).setColorFilter(context.getResources().getColor(R.color.bg_color_white), PorterDuff.Mode.SRC_ATOP);
             stars.getDrawable(1).setColorFilter(context.getResources().getColor(R.color.bg_color_dark_gray), PorterDuff.Mode.SRC_ATOP);
             stars.getDrawable(0).setColorFilter(context.getResources().getColor(R.color.bg_color_dark_gray), PorterDuff.Mode.SRC_ATOP);
         }
-        else if(theme==RateAppPopUp_Data.THEME_DEFAULT_DARK || theme==RateAppPopUp_Data.THEME_DEFAULT_DARK_GRAY)
-        {
-            stars.getDrawable(2).setColorFilter(context.getResources().getColor(R.color.bg_color_white), PorterDuff.Mode.SRC_ATOP);
-            stars.getDrawable(1).setColorFilter(context.getResources().getColor(R.color.bg_color_white), PorterDuff.Mode.SRC_ATOP);
-            stars.getDrawable(0).setColorFilter(context.getResources().getColor(R.color.bg_color_white), PorterDuff.Mode.SRC_ATOP);
-        }
+
+
 
 
 
         ratingBar.setOnRatingBarChangeListener(new RatingBar.OnRatingBarChangeListener() {
             @Override
-            public void onRatingChanged(RatingBar ratingBar, float v, boolean b) {
-                Log.e(TAG, "Rating changed : " + v);
-                changed_rating=(int)v;
+            public void onRatingChanged(RatingBar ratingBar, float rating, boolean fromUser) {
+
+                if(fromUser)
+                {
+                    changed_rating=(int)rating;
+                    Log.e(TAG, "changed_rating : " + changed_rating);
+
+                }
+
             }
         });
 
