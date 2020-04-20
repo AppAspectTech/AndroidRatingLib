@@ -3,14 +3,7 @@ package com.appaspect.rateapp.ratinglibrary;
 /**
  * Created by AppAspect on 25/12/18.
  */
-import android.content.Context;
-import android.content.Intent;
-import android.content.SharedPreferences;
-import android.net.Uri;
-import android.support.v7.app.AlertDialog;
-import android.view.LayoutInflater;
-import android.view.View;
-import android.widget.TextView;
+import androidx.appcompat.app.AlertDialog;
 
 public class RateAppPopUp_Data {
 

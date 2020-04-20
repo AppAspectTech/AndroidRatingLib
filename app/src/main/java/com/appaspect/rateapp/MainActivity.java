@@ -3,7 +3,7 @@ package com.appaspect.rateapp;
  * Created by AppAspect on 25/12/18.
  */
 
-import android.support.v7.app.AppCompatActivity;
+import androidx.appcompat.app.AppCompatActivity;
 import android.os.Bundle;
 
 import com.appaspect.rateapp.ratinglibrary.RateAppPopUp;
@@ -16,7 +16,7 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        RateAppPopUp rateAppPopUp = new RateAppPopUp(this,"darasaini1312@gmail.com");
+        RateAppPopUp rateAppPopUp = new RateAppPopUp(this,"ABC@gmail.com");
         rateAppPopUp.setTitle(getString(R.string.app_name))
                 .setHeader_Background_Color(getResources().getColor(R.color.bg_color_black))
                 .setHeader_Text_Color(getResources().getColor(R.color.text_color_white))
